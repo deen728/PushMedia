@@ -87,7 +87,7 @@ module.exports = async function enquiry(req, res) {
     });
     return res.status(200).json({ success: true });
   } catch (error) {
-    console.error("Enquiry delivery failed:", error.message);
+    console.error("Enquiry delivery failed:", error.code || "SMTP_ERROR");
     return res.status(502).json({ success: false, message: "Unable to deliver enquiry." });
   }
 };
