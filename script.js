@@ -86,7 +86,7 @@ campaignForm?.addEventListener("submit", async (event) => {
   const submitButton = campaignForm.querySelector("[data-submit-button]");
   const status = campaignForm.querySelector("[data-form-status]");
   const defaultLabel = submitButton?.innerHTML;
-  const endpoint = campaignForm.action.replace("formsubmit.co/", "formsubmit.co/ajax/");
+  const endpoint = campaignForm.action;
 
   status?.classList.remove("visible", "success", "error");
   submitButton?.setAttribute("disabled", "");
@@ -95,8 +95,11 @@ campaignForm?.addEventListener("submit", async (event) => {
   try {
     const response = await fetch(endpoint, {
       method: "POST",
-      body: new FormData(campaignForm),
-      headers: { Accept: "application/json" },
+      body: JSON.stringify(Object.fromEntries(new FormData(campaignForm))),
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
     });
     const result = await response.json().catch(() => ({}));
 
@@ -111,7 +114,7 @@ campaignForm?.addEventListener("submit", async (event) => {
     }
   } catch (error) {
     if (status) {
-      status.textContent = "We could not send your enquiry right now. Please email sales@pushmedia.ng or try again.";
+      status.textContent = "We could not send your enquiry right now. Please email sales@pushmedia.ng or call +234 912 224 2777.";
       status.classList.add("visible", "error");
     }
   } finally {
