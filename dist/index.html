@@ -132,8 +132,15 @@
           <h2>Smartbox, built for moving campaigns.</h2>
           <p class="intro">Plan a route, schedule creative and follow campaign movement with location reporting from the field.</p>
           <div class="mini-map" aria-hidden="true">
-            <span class="pin p1"></span><span class="pin p2"></span><span class="pin p3"></span>
-            <svg viewBox="0 0 420 185"><path d="M20 140 C85 112 74 43 143 68 S202 150 247 113 304 31 394 50"/></svg>
+            <svg viewBox="0 0 420 185">
+              <path d="M20 140 C85 112 74 43 143 68 S202 150 247 113 304 31 394 50"/>
+              <circle class="route-stop-halo" cx="143" cy="68" r="10"/>
+              <circle class="route-stop" cx="143" cy="68" r="4"/>
+              <circle class="route-stop-halo" cx="247" cy="113" r="10"/>
+              <circle class="route-stop" cx="247" cy="113" r="4"/>
+              <circle class="route-stop-halo" cx="394" cy="50" r="10"/>
+              <circle class="route-stop" cx="394" cy="50" r="4"/>
+            </svg>
             <small>LIVE ROUTE / LAGOS</small>
           </div>
         </div>
@@ -162,7 +169,7 @@
         </div>
         <div class="product-gallery reveal">
           <figure>
-            <img src="assets/brand/3d-front.jpg" alt="LED Screen front view">
+            <video src="assets/brand/video.mp4" poster="assets/brand/3d-front.jpg" autoplay loop muted playsinline preload="metadata" aria-label="LED screen front view in motion"></video>
             <figcaption>LED Screen</figcaption>
           </figure>
           <figure>
@@ -230,7 +237,6 @@
     </div>
     <div class="footer-bottom container">
       <span>&copy; <span data-year></span> Push'N'Deliver Ltd. All rights reserved.</span>
-      <span class="designer-credit">Designed by <a href="https://kzydesigns.com" target="_blank" rel="noopener noreferrer">Kzy</a></span>
     </div>
   </footer>
 </body>

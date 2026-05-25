@@ -274,12 +274,12 @@ h2 span, .contact-hero h1 span { color: var(--orange); }
   border-radius: 8px;
   background: var(--card-inner);
 }
-.mini-map svg { height: 100%; width: 100%; }
+.mini-map svg { display: block; height: 100%; width: 100%; }
 .mini-map path { fill: none; stroke: var(--orange); stroke-width: 2; stroke-dasharray: 5 7; animation: route 11s linear infinite; }
+.mini-map .route-stop-halo { fill: rgba(255, 155, 89, .15); }
+.mini-map .route-stop { fill: var(--orange); }
 @keyframes route { to { stroke-dashoffset: -108; } }
 .mini-map small { position: absolute; left: 18px; bottom: 13px; color: #8491b1; letter-spacing: .2em; font-size: .62rem; }
-.pin { position: absolute; z-index: 1; width: 8px; height: 8px; border-radius: 50%; background: var(--orange); box-shadow: 0 0 0 7px rgba(255, 155, 89, .15); }
-.p1 { left: 27%; top: 62%; } .p2 { left: 58%; top: 62%; } .p3 { left: 82%; top: 27%; }
 
 /* Product */
 .product { background: var(--navy-deep); }
@@ -297,12 +297,16 @@ h2 span, .contact-hero h1 span { color: var(--orange); }
 }
 .product-gallery figure { margin: 0; }
 .product-gallery figure:first-child { margin-top: 66px; }
-.product-gallery img {
+.product-gallery img,
+.product-gallery video {
+  display: block;
+  width: 100%;
   aspect-ratio: 1;
   object-fit: cover;
   border-radius: 15px;
   border: 1px solid var(--line-soft);
 }
+.product-gallery video { background: var(--card-inner); }
 .product-gallery figcaption { padding: 14px 3px; color: var(--muted); font-size: .78rem; }
 
 /* Audiences and CTA */
